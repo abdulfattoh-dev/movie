@@ -35,8 +35,8 @@ interface Movie {
 
 interface Props {
     data: Movie[]
-    title: string
-    path: string
+    title?: string
+    path?: string
     skip?: number
     count?: number
 }

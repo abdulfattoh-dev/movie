@@ -2,37 +2,46 @@ import { memo, type FC } from 'react';
 import { IMAGE_URL } from '../../const';
 import { useNavigate } from 'react-router-dom';
 
-enum Genres {
-    Action = 28,
-    Adventure = 12,
-    Animation = 16,
-    Comedy = 35,
-    Crime = 80,
-    Documentary = 99,
-    Drama = 18,
-    Family = 10751,
-    Fantasy = 14,
-    History = 36,
-    Horror = 27,
-    Music = 10402,
-    Mystery = 9648,
-    Romance = 10749,
-    Sciencefiction = 878,
-    Tvmovie = 10770,
-    Thriller = 53,
-    War = 10752,
-    Western = 37
+const Genres: Record<number, string> = {
+    28: "Action",
+    12: "Adventure",
+    16: "Animation",
+    35: "Comedy",
+    80: "Crime",
+    99: "Documentary",
+    18: "Drama",
+    10751: "Family",
+    14: "Fantasy",
+    36: "History",
+    27: "Horror",
+    10402: "Music",
+    9648: "Mystery",
+    10749: "Romance",
+    878: "Science Fiction",
+    10770: "TV Movie",
+    53: "Thriller",
+    10752: "War",
+    37: "Western",
+};
+
+interface Movie {
+    id: number;
+    title?: string;
+    name?: string;
+    poster_path: string;
+    genre_ids: number[];
 }
 
+
 interface Props {
-    data: any
+    data: Movie[]
     title: string
     path: string
     skip?: number
-    count: number
+    count?: number
 }
 
-const MovieView: FC<Props> = ({ data, title, path, skip = 0, count }) => {
+const MovieView: FC<Props> = ({ data, title, path, skip = 0, count = 4 }) => {
     const navigate = useNavigate()
     return (
         <div className="container mx-auto flex flex-col gap-5">

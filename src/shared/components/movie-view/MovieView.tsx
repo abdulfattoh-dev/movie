@@ -58,7 +58,7 @@ const MovieView: FC<Props> = ({ data, title, path, skip = 0, count = 4 }) => {
                             </div>
                             <div className='p-2'>
                                 <h3 className='font-medium text-2xl line-clamp-1 text-white' title={movie.title ? movie.title : movie.name}>{movie.title ? movie.title : movie.name}</h3>
-                                <div className='text-[#4D4D4D] flex gap-1.5 line-clamp-1'>
+                                <div className='text-[#4D4D4D] flex gap-1.5 line-clamp-1 text-nowrap'>
                                     {
                                         movie?.genre_ids.map((id: number) => (
                                             <p key={id} className='text-[#4D4D4D]'>{Genres[id]}</p>

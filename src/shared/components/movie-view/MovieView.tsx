@@ -41,17 +41,13 @@ interface Props {
     count?: number
 }
 
-const MovieView: FC<Props> = ({ data, title, path, skip = 0, count = 4 }) => {
+const MovieView: FC<Props> = ({ data }) => {
     const navigate = useNavigate()
     return (
         <div className="container mx-auto flex flex-col gap-5">
-            <div className='flex justify-between'>
-                <h4 className='text-2xl text-white'>{title}</h4>
-                <p onClick={() => navigate(`${path}`)} className='text-[#4D4D4D] text-[16px] hover:text-[#C61F1F] cursor-pointer'>Show all {'>'}</p>
-            </div>
             <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
                 {
-                    (count ? data?.slice(skip, count + skip) : data)?.map((movie: any) => (
+                    data?.map((movie: any) => (
                         <div key={movie.id}>
                             <div className='rounded-xl overflow-hidden' onClick={() => navigate(`/movie/${movie.id}`)}>
                                 <img loading='lazy' src={`${IMAGE_URL}${movie.poster_path}`} alt={movie.title} />

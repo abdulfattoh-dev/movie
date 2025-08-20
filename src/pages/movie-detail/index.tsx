@@ -38,7 +38,7 @@ const MovieDetail = () => {
           ))
         }
       </div>
-      <div className='flex flex-wrap'>
+      <div className='flex overflow-auto'>
         {
           creditsData?.cast?.map((user: any) => {
             const image = user.profile_path ? IMAGE_URL + user.profile_path : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png"

@@ -15,8 +15,8 @@ const Header = () => {
   }, [light]);
 
   return (
-    <header className='h-20 border flex'>
-      <nav className='container flex justify-between items-center border'>
+    <header className='h-20 flex'>
+      <nav className='container flex justify-between items-center'>
         <div>
           <img src={logo} alt="" />
         </div>

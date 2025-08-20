@@ -16,7 +16,7 @@ const Movie = () => {
 
   const { getMovies } = useMovie();
   const { getGenres } = useGenre();
-  const { data: movieData, isLoading } = getMovies({
+  const { data: movieData } = getMovies({
     page,
     with_genres,
     "release_date.gte": item?.gte,

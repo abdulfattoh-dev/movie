@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import bookmark from "../pages/bookmark/store/bookmarkSlice";
 
 export const store = configureStore({
   reducer: {
-    fake: () => "laylo"
+    fake: () => "laylo",
+    bookmark
   },
 });
 

@@ -1,0 +1,7 @@
+.ant-input::placeholder {
+    color: #777777 !important;
+}
+
+.ant-input-password-icon {
+    color: #777777 !important;
+}

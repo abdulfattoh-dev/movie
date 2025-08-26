@@ -1,0 +1,10 @@
+.ant-otp {
+    gap: 5px;
+}
+
+.ant-input {
+    background-color: #111111 !important;
+    color: white !important;
+    height: 43px;
+    width: 59px;
+}
